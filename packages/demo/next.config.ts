@@ -1,15 +1,8 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
-  // Configure Turbopack for monorepo
-  turbopack: {
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src'),
-      },
-    },
-  },
+  // Disable Turbopack entirely
+  turbopack: false,
 
   // Environment variable validation
   env: {
