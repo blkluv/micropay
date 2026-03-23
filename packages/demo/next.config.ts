@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
-
 import path from "path";
 
 const nextConfig: NextConfig = {
-  // Use Turbopack (Next.js 16 default)
-  // Use Turbopack (Next.js 16 default)
-  // turbopack: {
-  //   root: path.resolve(__dirname, '../../'),
-  // },
+  // Configure Turbopack for monorepo
+  turbopack: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+      },
+    },
+  },
 
   // Environment variable validation
   env: {
@@ -39,7 +41,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
 };
 
 export default nextConfig;
